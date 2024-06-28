@@ -11,6 +11,8 @@ urlpatterns = [
     path('logout/', LogoutView.as_view(), name='logout'),
     path('', include('apps.users.urls')),
     path('',include('apps.products.urls')),
+    path('', include('apps.carts.urls')),
+    path('', include('apps.categories.urls')),
 ]
 
 

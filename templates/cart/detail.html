@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Детали корзины</title>
+</head>
+<body>
+    <h1>Детали корзины пользователя {{ carts.owner.username }}</h1>
+    <ul>
+        {% for item in carts.cart.all %}
+            <li>{{ item.item.title }}: {{ item.quantity }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'item_create' %}">Добавить товар</a>
+</body>
+</html>
