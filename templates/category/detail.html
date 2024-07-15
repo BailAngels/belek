@@ -1,0 +1,17 @@
+{% extends 'gallery.html' %}
+{% block title %}Category{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="alert alert-primary mr-5" role="alert">
+            <p>{{ categories.title }}</p>
+        </div>
+        {% for product in categories.category.all %}
+            <a href="{% url 'detail' product.pk %}">{{ product.title }}</a>
+            {% for image in product.prod_img.all %}
+                <div class="col-md-3 mb-4">
+                    <img src="{{ image.image.url }}" alt="{{ product.title }}">
+                </div>
+            {% endfor %}
+        {% endfor %}
+    </div>
+{% endblock %}
